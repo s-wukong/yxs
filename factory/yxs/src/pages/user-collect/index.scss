@@ -1,0 +1,228 @@
+@import "@styles/theme.scss";
+
+.home {
+  position: relative;
+  // padding: 0px 32px;
+  background: #ffffff;
+}
+
+.home-search {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  width: 100%;
+  padding: 0 24px;
+  background: #ffffff;
+  z-index: 9;
+
+  &-wrap {
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    border: none;
+    // background: #f1f0f0;
+    border-radius: 16px;
+  }
+
+  &-img {
+    margin: 0 22px;
+    width: 30px;
+    height: 30px;
+  }
+
+  &-input {
+    width: 92%;
+  }
+
+}
+
+.home-wrap {
+  // margin-top: 106px;
+  padding:0;
+  // background: #fafafa;
+}
+
+.home-loading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+
+  &-txt {
+    color: $text-color-light;
+    font-size: 24px;
+  }
+}
+
+.user-collect-bot{
+  width: 100%;
+  height: 120px;
+  padding-top: 34px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #f6f6f6;
+  &-left{
+    float: left;
+    margin-left: 132px;
+  }
+  &-right{
+    float: right;
+    margin-right: 132px;
+  }
+  &-left, &-right{
+    &-img{
+      width: 32px;
+      height: 36px;
+      margin-left: 6rpx;
+    }
+    &-txt{
+      font-size: 24px;
+      color: #666;
+    }
+  }
+
+}
+
+.vedio-container{
+  width: 100%;
+  .vedio-list{
+    width: 100%;
+    min-height: 504px;
+    margin-bottom: 50px;
+    padding: 0 32px;
+    clear: both;
+    &-img{
+      width: 100%;
+      height: 384px;
+      margin: 0 auto;
+      position: relative;
+      // background: #10aeff;
+      .vedio-spec{
+        width: 100%;
+        height: 100%;
+      }
+      &-txt{
+        font-size: 24px;
+        color: #ffffff;
+        position: absolute;
+        right: 24px;
+        bottom: 24px;
+        text-shadow: 0 1px 1px rgba($color: #000000, $alpha: 1.0);
+      }
+    }
+    &-title{
+      font-size: 32px;
+      margin-top: 26rpx;
+      margin-bottom: 30rpx;
+      font-weight: bolder;
+      color: #000;
+    }
+    &-des{
+      width: 100%;
+      font-size: 28px;
+      color: #000;
+      &-label-left{
+        float: left;
+        &-txt{
+          max-width: 260px;
+          margin-right: 32px;
+          float: left;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+      &-label-right{
+        color: #666;
+        float: right;
+        display: flex;
+        align-items: center;
+        margin-left: 32px;
+        .like-img{
+          width: 28px;
+          height: 28px;
+          margin-right: 18px;
+        }
+      }
+    }
+  }
+}
+
+.report-list{
+  width: 100%;
+  min-height: 240px;
+  padding: 30px 32px;
+  font-size: 24px;
+  color: #000;
+  border-bottom: 1px solid #E9E9E9;
+  &-content{
+    width: 100%;
+    height: 132px;
+    display: flex;
+    flex-flow: row;
+    &-left{
+      flex: 1;
+      &-t1{
+        font-size: 32px;
+        min-height: 80px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        overflow:hidden;
+        /*! autoprefixer: off */
+        -webkit-box-orient: vertical;
+      }
+      &-t2{
+        margin-top: 12px;
+        color: #666;
+        text-align: left;
+        &-txt{
+          display: block;
+          float: left;
+          margin-right: 24px;
+          max-width: 160px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        &-img{
+          display: block;
+          float: left;
+          width: 36px;
+          height: 20px;
+          margin-right: 10px;
+          margin-top: 8px;
+        }
+      }
+    }
+    &-right{
+      width:296px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &-img{
+        width: 236px;
+        height: 132px;
+      }
+    }
+  }
+  &-label{
+    margin-top: 16px;
+    &-btn{
+      display: block;
+      float: left;
+      padding: 4px 18px;
+      margin-right: 16px;
+      margin-bottom: 12px;
+      border-radius: 20px;
+      border: 1px solid #d8d8d8;
+    }
+  }
+}

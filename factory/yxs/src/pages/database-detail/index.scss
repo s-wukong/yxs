@@ -1,0 +1,82 @@
+@import "@styles/theme.scss";
+
+.home {
+  position: relative;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.home__wrap {
+  padding: 76px 0 0;
+  background: #fafafa;
+}
+
+.home__loading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+
+  &-txt {
+    color: $text-color-light;
+    font-size: 24px;
+  }
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  color: #000000;
+  &-avatar {
+    display: block;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  &-name {
+    display: block;
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+  &-edit{
+    width: 100%;
+    height: 30px;
+    color: #000000;
+    font-size: 28px;
+    padding: 0 32px;
+    margin-bottom: 72px;
+    &-left{
+      float: left;
+      text-align: left;
+      &-txt{
+        float: left;
+      }
+      &-input{
+        float: left;
+        margin-left: 14px;
+      }
+    }
+    &-right{
+      float: right;
+      text-align: right;
+    }
+    &-color-yellow{
+      color: #FCB900;
+    }
+    &-color-gray{
+      color: #666666;
+    }
+  }
+
+}
+
+.edit-img{
+  width: 28px;
+  height: 32px;
+}

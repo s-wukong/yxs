@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DOCUMENT version="1">
+	<!--根节点必须为⼤写DOCUMENT，标记整个xml⽂件的开始和结束-->
+	<item>
+		<!-- item: 一个item为一条数据，单文件最大允许5000条，且文件大小不应超过5M -->
+		<key>
+			<![CDATA[123456yxs]]>
+		</key>
+		<display type="object">
+			<!-- display：数据区域，不能修改或者删除字段，可增加字段，节点总大小上限20KB，不建议超过3KB，必须字段 -->
+			<title type="string">
+				<![CDATA[汽车数字化研享社]]>
+			</title>
+			<!-- title: 网站名称，字符串类型，必须字段 -->
+			<path type="string">
+				<![CDATA[]]>
+			</path>
+			<tmaid type="string">
+				<![CDATA[ttedc09b7d72fb199d]]>
+			</tmaid>
+			<!-- tmaid: 字节跳动小程序平台分配的小程序id，字符串类型，必须字段 -->
+			<lightappid_path type="string">
+				<![CDATA[ttedc09b7d72fb199d]]>
+			</lightappid_path>
+			<!-- lightappid_path: 字节跳动小程序平台分配的小程序id（内容与tmaid一样），字符串类型，必须字段 -->
+			<lightapp_path type="string">
+				<![CDATA[pages/database]]>
+			</lightapp_path>
+			<!-- lightapp_path: 小程序内部PATH，PATH开头省略/，例如：pages/xxx，而不是/pages/xxx，字符串类型，必须字段 -->
+			<slogan type="string">
+				<![CDATA[热推报告]]>
+			</slogan>
+			<!--slogn type:运用于官网大功能样式title后缀，字数控制在10字符内，短摘要可以不填写此字段，长摘要必选字段 -->
+			<description type="string">
+				<![CDATA[聚焦汽车数字化领域的专业信息服务平台]]>
+			</description>
+			<!-- description: 小程序简介，官网小功能字数不超过20字，官网大功能字数应控制在20-40字内，字符串类型，必须字段 -->
+			<logo type="object">
+				<!-- logo: 官网logo，如果是选择正方形logo选择square type，长方形logo选择rectangle type，必须字段 -->
+				<square type="object">
+					<!-- square: 正方形的官网logo，可选字段 -->
+					<url type="string">
+						<![CDATA[https://cigrs.cigdata.cn/yxs/logo/logo.jpg]]>
+					</url>
+					<!-- url: icon对应的图片链接，字符串类型，长度不超过1024个字符，可选类型 -->
+					<height type="integer">
+						<![CDATA[153]]>
+					</height>
+					<!-- height: icon对应的图片高度，数字类型，可选类型 -->
+					<width type="integer">
+						<![CDATA[153]]>
+					</width>
+					<!-- width: icon对应的图片宽度，数字类型，可选类型 -->
+				</square>
+				<rectangle type="object">
+					<!-- rectangle: 长方形的官网logo，可选字段 -->
+					<url type="string">
+						<![CDATA[https://cigrs.cigdata.cn/yxs/logo/logo.jpg]]>
+					</url>
+					<!-- url: icon对应的图片链接，字符串类型，长度不超过1024个字符，可选类型 -->
+					<height type="integer">
+						<![CDATA[216]]>
+					</height>
+					<!-- height: icon对应的图片高度，数字类型，可选类型 -->
+					<width type="integer">
+						<![CDATA[327]]>
+					</width>
+					<!-- width: icon对应的图片宽度，数字类型，可选类型 -->
+				</rectangle>
+			</logo>
+			<funcs type="array">
+				<!-- funcs: 在头条搜索里，展现的功能tab，必选字段，最多出现1次 -->
+				<value type="object">
+					<!-- value: tab详细信息，对象类型，可出现1到多次 -->
+					<name type="string">
+						<![CDATA[精选报告搜索+1000]]>
+					</name>
+					<!-- name: icon上的文字，字符串类型，长度不超过4个字符，必选类型 -->
+					<lightapp_link_path type="string">
+						<![CDATA[pages/database]]>
+					</lightapp_link_path>
+					<!-- lightapp_link_path: 小程序内部PATH，PATH开头省略/，例如：pages/xxx，而不是/pages/xxx，字符串类型，必须字段 -->
+					<lightappid_link_path type="string">
+						<![CDATA[ttedc09b7d72fb199d]]>
+					</lightappid_link_path>
+					<!-- lightappid_link_path: 字节跳动小程序平台分配的小程序id，字符串类型，必须字段 -->
+					<path type="string">
+						<![CDATA[]]>
+					</path>
+				</value>
+			</funcs>
+		</display>
+	</item>
+</DOCUMENT>

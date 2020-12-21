@@ -1,0 +1,14 @@
+html,
+body {
+  height: 100%;
+}
+.loading_bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, .5) url(image/loading.gif) no-repeat center center;
+  background-size: 128px 128px;
+}

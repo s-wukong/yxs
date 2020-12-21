@@ -1,0 +1,293 @@
+/* bottom tab */
+html,
+body
+{
+  height: 100%;
+	margin:0;
+	padding:0;
+}
+
+body
+{
+  font-size:62.5% !important;
+  padding-bottom: 8rem;
+}
+
+ul
+{
+	padding:0px;
+	margin:0px;
+}
+
+ul li
+{
+    list-style-type:none;
+}
+
+.user-collect-bot{
+  width: 100%;
+  height: 6rem;
+  padding-bottom: 2rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #f6f6f6;
+  display: flex;
+}
+
+.user-collect-bot-left, .user-collect-bot-right{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-collect-bot-img{
+  width: 1.8rem; 
+  height: 1.8rem;
+}
+
+.user-collect-bot-txt{
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.user-collect-bot-content{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+/* modal */
+.anModal{
+  display: none;
+}
+.anModal .anModalMask{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  /* background-color: rgba(0,0,0,.4); */
+  height: 100%;
+  z-index: 9;
+}
+.anModalContent{
+  position: relative;
+  background-color: #fff;
+  border: 0;
+  border-radius: 0;
+  background-clip: padding-box;
+  /* box-shadow: 0 2px 8px rgba(0,0,0,.2); */
+  box-shadow: 0 1px 20px #d6d6d6;
+}
+.anModalContent p{
+  position: relative;
+}
+.anModalContent p .anModalContentWarn{
+  color: #D20404;
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: -2.4rem;
+  left: 16.4rem;
+}
+.anModalWrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* white-space: nowrap; */
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  outline: 0;
+}
+.anModalWrap .anModalContanier{
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  position: relative;
+  width: 87%;
+}
+
+.anModalContanier .anModalContent0{
+  width: 100%;
+  min-height: 20rem;
+  text-align: center;
+  color: #0F164E;
+  margin-bottom: 8rem;
+}
+.anModalContanier .anModalContent0 .pp{
+  padding-top: 6rem;
+  padding: 6rem 1rem 0 1rem;
+  font-size: 2rem !important;
+}
+
+.anModalContanier .anModalCloseButtom{
+  font-size: 1.8rem;
+  position: absolute;
+  right: 1.2rem;
+  top: 1.2rem;
+}
+.anModalContent .anModalContentHintButtom{
+  font-size: 1.4rem;
+  padding: 0.8rem 4rem;
+  margin: 2rem;
+  border-radius: 16px;
+  border: 1px solid #FCB900;
+  color: #FCB900;
+  display: inline-block;
+}
+/* modal bottom */
+.anModal_b{
+  display: none;
+}
+.anModal_b .anModalMask_b{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.4);
+  height: 100%;
+  z-index: 10;
+}
+.anModalContent_b{
+  position: relative;
+  background-color: #fff;
+  border: 0;
+  border-radius: 0;
+  background-clip: padding-box;
+  /* box-shadow: 0 1px 20px #d6d6d6; */
+}
+.anModalContent_b p{
+  position: relative;
+}
+.anModalContent_b p .anModalContentWarn_b{
+  color: #D20404;
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: -2.4rem;
+  left: 16.4rem;
+}
+.anModalWrap_b{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  outline: 0;
+}
+.anModalWrap_b .anModalContanier_b{
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  position: relative;
+  width: 100%;
+}
+
+.anModalContanier_b .anModalContent0_b{
+  width: 100%;
+  min-height: 22.6rem;
+  font-size: 1.4rem !important;
+  text-align: center;
+  color: #0F164E;
+}
+.anModalContanier_b .anModalContent0_b p{
+  /* font-size: 20px !important; */
+}
+
+.anModalContanier_b .anModalCloseButtom_b{
+  font-size: 1.8rem;
+  position: absolute;
+  right: 1.2rem;
+  top: 1.2rem;
+}
+.anModalContent_b .anModalContentHintButtom_b{
+  font-size: 1.4rem;
+  padding: 0.8rem 4rem;
+  margin: 2rem;
+  border-radius: 1.6rem;
+  border: 1px solid #FCB900;
+  color: #FCB900;
+  display: inline-block;
+}
+.showModal{
+  display: block !important;
+}
+#anCopyLink{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+  margin: 0 3rem;
+}
+/* toast */
+.anToast{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 30rem;
+  margin: 0 auto;
+  z-index: 100;
+}
+.anToastTxt{
+  display: inline-block;
+  border-radius: 0.8rem;
+  padding: 0.8rem 1.6rem;
+  background: rgba(55,55,55,.6);
+  color: #fff;
+  font-size: 1.2rem;
+}
+.clearToast{
+  display: none;
+}
+/* 引导页 */
+.guidePage{
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, .4);
+}
+.guidePage img{
+  width: 10rem;
+  height: 3.4rem;
+  display: block;
+  float: right;
+  margin-right: 1.6rem;
+}
+/* pdfjs css */
+body{
+  background: none !important;
+  background-color: #f6f6f6 !important;
+  /* background-image: none !important; */
+}
+.toolbar{
+  display: none !important;
+}
+#viewerContainer{
+  top: 0.8rem !important;
+}
+.pdfViewer .page{
+  border-image: none !important;
+  /* box-shadow: */
+}

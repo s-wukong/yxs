@@ -1,0 +1,131 @@
+@import "@styles/theme.scss";
+
+.home {
+  position: relative;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.home__wrap {
+  padding: 76px 0 0;
+  background: #fafafa;
+}
+
+.home__loading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+
+  &-txt {
+    color: $text-color-light;
+    font-size: 24px;
+  }
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  color: #000000;
+  padding-top: 20px;
+  &-info-top{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    min-height: 170rpx;
+  }
+  &-avatar {
+    display: block;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  &-name {
+    display: block;
+    margin-bottom: 100px;
+    overflow: hidden;
+  }
+  &-edit{
+    width: 100%;
+    height: 32px;
+    color: #000000;
+    font-size: 28px;
+    padding: 0 32px;
+    margin-bottom: 72px;
+    &-left{
+      float: left;
+      text-align: left;
+      &-txt{
+        float: left;
+      }
+      &-input{
+        min-width: 360px;
+        float: left;
+        margin-left: 14px;
+      }
+    }
+    &-right{
+      float: right;
+      text-align: center;
+      // line-height: 60rpx;
+      width: 60px;
+      height: 60px;
+      margin-right: 20px;
+    }
+    &-color-yellow{
+      color: #FCB900;
+    }
+    &-color-gray{
+      color: #666666;
+    }
+    &-bot{
+      width: 100%;
+      display: flex;
+      flex-flow: wrap;
+      justify-content: center;
+      position: fixed;
+      left: 0;
+      bottom: 240px;
+      padding: 10px;
+      &-l{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 120px;
+        height: 64px;
+        border: 2px solid #FCB900;
+        background: #ffffff;
+        font-size: 28px;
+        color: #FCB900;
+        border-radius: 32px;
+        margin-right: 72px;
+      }
+      &-r{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 120px;
+        height: 64px;
+        border: none;
+        background: #FCB900;
+        font-size: 28px;
+        color: #ffffff;
+        border-radius: 32px;
+      }
+    }
+  }
+
+}
+
+.edit-img{
+  width: 28px;
+  height: 32px;
+}

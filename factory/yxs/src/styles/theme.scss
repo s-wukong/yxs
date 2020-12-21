@@ -1,0 +1,43 @@
+@import "./mixins.scss";
+
+$primary-color: #FCB900;//#ab2b2b
+$disabled-color: #dddddd;
+
+$black: #000000;
+$white: #ffffff;
+
+$text-color: #333333;
+$text-color-light: #666666;
+$text-color-lighter: #999999;
+
+$border-color: #dddddd;
+$border-radius: 4px;
+
+$image-bg: #f4f4f4;
+
+.float_right{
+    float: right !important;
+}
+.dis_flex{
+  display: flex;
+}
+.align_item{
+  align-items: center;
+}
+.font-12{
+  font-size: 24px;
+}
+.no-collect{
+  // text-align: center;
+  color: #666;
+  font-size: 24px;
+  // padding-top: 12px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.margin_right_0{
+  margin-right: 0 !important;
+}

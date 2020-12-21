@@ -1,0 +1,126 @@
+{
+  "name": "JDY",
+  "version": "4.2.0",
+  "description": "JDY",
+  "scripts": {
+    "sonar": "sonar-scanner -X -Dproject.settings=./config/sonar-project.properties",
+    "clean": "rimraf ./asset",
+    "yapi": "npm-run-all env:mock clean build:react build:local",
+    "local": "npm-run-all env:local clean build:react build:local",
+    "dev": "npm-run-all env:dev clean build:react build:local",
+    "qa": "npm-run-all env:qa clean build:react build:local",
+    "prod": "npm-run-all env:prod clean build:react build:local",
+    "build": "npm-run-all env:prod clean build:react build:prod",
+    "build:local": "cross-env NODE_ENV=development webpack-dev-server --config config/client.config.js",
+    "build:react": "webpack --config config/dll.config.js",
+    "build:prod": "cross-env NODE_ENV=production webpack --config config/client.config.js",
+    "env:mock": "sh .env.sh mock",
+    "env:local": "sh .env.sh local",
+    "env:dev": "sh .env.sh dev",
+    "env:qa": "sh .env.sh qa",
+    "env:prod": "sh .env.sh prod",
+    "mock": "jest --config=config/jest.config.js",
+    "mock:watch": "jest --config=config/jest.config.js --watch",
+    "precommit": "lint-staged",
+    "cz": "git-cz"
+  },
+  "author": "z",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "standard-version": {
+    "skip": {
+      "commit": true,
+      "tag": true
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint  -c .eslintrc.js bin config client server library mock",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.2.2",
+    "@babel/runtime": "^7.10.2",
+    "@storybook/react": "^5.3.19",
+    "@types/jest": "^26.0.0",
+    "@types/node": "^14.0.13",
+    "@types/react": "^16.9.11",
+    "@types/webpack-env": "^1.14.1",
+    "antd": "^4.6.4",
+    "autoprefixer": "^9.7.2",
+    "axios": "^0.19.2",
+    "axios-extra": "0.0.5",
+    "es6-promise": "^4.2.8",
+    "ip": "^1.1.5",
+    "react": "^16.12.0",
+    "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.12.18",
+    "react-redux": "^7.1.3",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
+    "typescript": "^3.9.5",
+    "webpack": "^4.41.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.10.1",
+    "@babel/plugin-proposal-function-bind": "^7.10.1",
+    "@babel/plugin-proposal-optional-chaining": "^7.10.1",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "@babel/preset-typescript": "^7.10.1",
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^26.0.1",
+    "babel-loader": "^8.0.5",
+    "commitizen": "^4.1.2",
+    "commitlint": "^9.0.1",
+    "concurrently": "^5.0.0",
+    "core-js": "^3.4.1",
+    "cross-env": "^7.0.0",
+    "css-hot-loader": "^1.4.4",
+    "css-loader": "^3.2.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "mini-css-extract-plugin": "^0.9.0",
+    "npm-run-all": "^4.1.5",
+    "path": "^0.12.7",
+    "stylelint": "^13.6.0",
+    "stylelint-config-airbnb": "0.0.0",
+    "stylelint-config-recess-order": "^2.0.3",
+    "stylelint-csstree-validator": "^1.6.1",
+    "stylelint-order": "^4.1.0",
+    "stylelint-processor-styled-components": "^1.10.0",
+    "stylelint-scss": "^3.12.1",
+    "stylelint-webpack-plugin": "^2.0.0",
+    "terser-webpack-plugin": "^3.0.3",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack-bundle-analyzer": "^3.8.0",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-parallel-uglify-plugin": "^1.1.2"
+  }
+}

@@ -1,0 +1,79 @@
+@import "@styles/theme.scss";
+
+.home {
+  position: relative;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 32px;
+}
+
+.home__wrap {
+  padding: 76px 0 0;
+  background: #fafafa;
+}
+
+.home__loading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+
+  &-txt {
+    color: $text-color-light;
+    font-size: 24px;
+  }
+}
+
+.user-money {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  color: #000000;
+  &-title {
+    font-size: 28px;
+    margin: 40px;
+  }
+  &-mo {
+    font-size: 44px;
+    font-weight: bolder;
+    color: #FCB900;
+    margin-bottom: 24px;
+  }
+  &-pannel-t{
+    color: #666666;
+    font-size: 28px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  &-pannel{
+    width: 100%;
+    min-height: 96px;
+    font-size: 28px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #E9E9E9;
+    &-left{
+      float: left;
+      text-align: left;
+      &-t{
+        color: #000000;
+        margin-bottom: 20px;
+      }
+      &-b{
+        color: #666666;
+      }
+    }
+    &-right{
+      color: #666666;
+      float: right;
+      text-align: right;
+      margin-top: 30px;
+    }
+  }
+
+}

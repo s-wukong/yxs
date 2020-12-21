@@ -1,0 +1,43 @@
+# IDE
+.DS_Store
+.vscode/
+
+# dependencies
+!/node_modules
+/node_modules/*
+!/node_modules/echarts
+/node_modules/echarts/*
+!/node_modules/echarts/lib
+/node_modules/echarts/lib/*
+!/node_modules/echarts/lib/chart
+/node_modules/echarts/lib/chart/*
+!/node_modules/echarts/lib/chart/sankey
+/node_modules/echarts/lib/chart/sankey/*
+!/node_modules/echarts/lib/chart/sankey/sankeyLayout.js
+!/node_modules/jspdf/dist/*
+!/node_modules/jspdf/dist/jspdf.debug.js
+!/node_modules/jspdf/dist/jspdf.min.js
+!/node_modules/jspdf/dist/jspdf.node.debug.js
+!/node_modules/jspdf/dist/jspdf.node.min.js
+.nyc_output
+package-lock.json
+yarn.lock
+
+# production
+asset
+config/reactFest.json
+config/echartsFest.json
+config/toolsFest.json
+config/env.js
+.cache
+
+# misc
+*.log
+*.swp
+npm-debug.log
+log/*
+!log/
+nohup.out
+.scannerwork/
+coverage
+report

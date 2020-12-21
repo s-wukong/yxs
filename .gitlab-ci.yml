@@ -1,0 +1,165 @@
+stages:
+   - checkfile #检测提交文件是否有CRLF和非UTF8格式
+   - review #hotfixes触发代码review
+   - build  #含单元测试，不通过不继续进行，hotfixes,develop,release触发
+   - build-cms #含单元测试，不通过不继续进行，develop-cms,release-cms触发
+   - deploydev  #develop,release触发
+   - deploydev-cms #develop-cms,release-cms触发
+   - testdev  #hotfixes,develop,release触发
+   - deployqa #hotfixes,develop,release触发
+   - deployqa-cms #develop-cms,release-cms触发
+   - testqa #hotfixes,develop,release触发
+   - deployprod #手动hotfixes,release触发
+   - deployprod-cms #develop-cms,release-cms触发
+   - mergecode #手动，hotfixes,release触发，merge到develop和master;
+
+checkfile:
+  stage: checkfile
+  tags:
+   - cig-rs
+  script:
+   - bash /home/gitlab-runner/SCM/ci/checkfile/checkfile.sh cig-rs $CI_COMMIT_REF_NAME $CI_COMMIT_SHA
+  only:
+   - /^hotfixes.*$/
+   - /^font-release.*$/
+   - /^cms-develop/
+   - /^cms-release/
+   - /^release.*$/
+   - /^develop.*$/
+  except:
+   - master
+
+review:
+  stage: review
+  tags:
+    - cig-rs
+  script:
+    - bash /home/gitlab-runner/SCM/ci/notice/dingding.sh cig-rs $CI_COMMIT_REF_NAME $CI_COMMIT_SHA review
+  only:
+   - /^hotfixes.*$/
+   - /^font-release.*$/
+   - /^cms-develop/
+   - /^cms-release/
+   - /^release.*$/
+   - /^develop.*$/
+    
+build:
+  stage: build
+  tags:
+   - cig-rs
+  script:
+   - bash /home/gitlab-runner/SCM/ci/buildcode/build.sh cig-rs $CI_COMMIT_REF_NAME $CI_COMMIT_SHA server/cig-rs-backend
+  only:
+   - /^hotfixes.*$/
+   - /^develop.*$/
+   - /^release.*$/
+
+build-cms:
+  stage: build-cms
+  tags:
+   - cig-rs
+  script:
+   - bash /home/gitlab-runner/SCM/ci/buildcode/build.sh cig-rs $CI_COMMIT_REF_NAME $CI_COMMIT_SHA server/cig-rs-cms   
+  only: 
+   - /^cms-develop/
+   - /^cms-release/
+
+deploydev:
+  stage: deploydev
+  tags:
+   - docker_builder
+  script:
+   - bash /home/gitlab-runner/SCM/ci/dispath/dispath.sh cig-rs dev $CI_COMMIT_SHA 
+  only:
+   - /^develop.*$/
+   - /^release.*$/
+
+
+deploydev-cms:
+  stage: deploydev
+  tags:
+   - docker_builder
+  script:
+   - bash /home/gitlab-runner/SCM/ci/dispath/dispath.sh cig-rs dev $CI_COMMIT_SHA cms
+  only:
+   - /^cms-develop/
+   - /^cms-release/  
+
+
+testdev:
+  stage: testdev
+  tags:
+   - cig-rs
+  script:
+   - bash /home/gitlab-runner/SCM/ci/testcode/test.sh cig-rs dev $CI_COMMIT_SHA 
+  only:
+   - /^develop.*$/
+   - /^release.*$/
+  allow_failure: true
+
+deployqa:
+  stage: deployqa
+  tags:
+   - docker_builder
+  script:
+   - bash /home/gitlab-runner/SCM/ci/dispath/dispath.sh cig-rs qa $CI_COMMIT_SHA 
+  only:
+   - /^hotfixes.*$/
+   - /^develop.*$/
+   - /^release.*$/
+
+deployqa-cms:
+  stage: deployqa
+  tags:
+   - docker_builder
+  script:
+   - bash /home/gitlab-runner/SCM/ci/dispath/dispath.sh cig-rs qa $CI_COMMIT_SHA cms
+  only:
+   - /^cms-develop/
+   - /^cms-release/
+
+testqa:
+  stage: testqa
+  tags:
+   - cig-rs
+  script:
+   - bash /home/gitlab-runner/SCM/ci/testcode/test.sh cig-rs qa $CI_COMMIT_SHA 
+  only:
+   - /^hotfixes.*$/
+   - /^develop.*$/
+   - /^release.*$/
+  allow_failure: true
+
+deployprod:
+  stage: deployprod
+  tags:
+   - docker_builder
+  script:
+   - bash /home/gitlab-runner/SCM/ci/dispath/dispath.sh cig-rs prod $CI_COMMIT_SHA 
+  only:
+   - /^hotfixes.*$/
+   - /^release.*$/
+  when: manual
+
+deployprod-cms:
+  stage: deployprod
+  tags:
+   - docker_builder
+  script:
+   - bash /home/gitlab-runner/SCM/ci/dispath/dispath.sh cig-rs cms-prod $CI_COMMIT_SHA cms
+  only:
+   - /^cms-release/
+  when: manual
+
+mergecode:
+  stage: mergecode
+  tags:
+   - cig-rs
+  script:
+   - bash /home/gitlab-runner/SCM/ci/mergecode/mergecode.sh cig-rs $CI_COMMIT_REF_NAME $CI_COMMIT_SHA
+  only:
+   - /^hotfixes.*$/
+   - /^font-release.*$/
+   - /^cms-release/
+   - /^release.*$/
+  when: manual

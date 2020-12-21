@@ -1,0 +1,15 @@
+export const USER_LOGIN = 'USER_LOGIN'
+
+export const USER_FINDUSER = 'API_USER_FINDUSER'
+
+export const USER_SIGNIN = 'USER_SIGNIN'
+
+export const USER_FINDSCORE = 'API_USER_FINDSCORE'
+
+export const USER_FINDCOLLECT = 'USER_FINDCOLLECT'
+
+export const USER_DOWNLOADLIST = 'USER_DOWNLOADLIST'
+
+export const USER_INVIT = 'USER_INVIT'
+
+export const USER_UPDATE = 'USER_UPDATE'

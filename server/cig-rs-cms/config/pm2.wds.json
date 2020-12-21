@@ -1,0 +1,33 @@
+{
+  "apps": {
+    "name": "cig-rs",
+    "script": "./bin",
+    "cwd": "./",
+    "args": "",
+    "interpreter": "",
+    "interpreter_args": "",
+    "watch": [
+      "bin",
+      "server",
+      "config",
+      "library",
+      "package.json"
+    ],
+    "ignore_watch": [
+      "log",
+      "mock",
+      "node_modules"
+    ],
+    "exec_mode": "fork",
+    "instances": 1,
+    "max_memory_restart": "1024M",
+    "error_file": "./log/pm2-error.log",
+    "out_file": "./log/pm2.log",
+    "merge_logs": true,
+    "log_date_format": "YYYY-MM-DD HH:mm:ss SSS",
+    "min_uptime": "60s",
+    "max_restarts": 30,
+    "autorestart": true,
+    "restart_delay": 60
+  }
+}

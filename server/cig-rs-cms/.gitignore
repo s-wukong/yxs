@@ -1,0 +1,20 @@
+# IDE
+.DS_Store
+
+# dependencies
+node_modules
+.nyc_output
+package-lock.json
+yarn.lock
+
+# production
+asset
+config/reactFest.json
+config/toolsFest.json
+
+# misc
+*.log
+*.swp
+npm-debug.log
+log/*
+!log/
